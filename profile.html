@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY PROFILE</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ebeae6;
+            color: #1c1e21;
+            line-height: 1.6;
+            padding: 30px 15px;
+        }
+
+        .khung-cv {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+        }
+
+        .thanh-menu {
+            background-color: #181a1c;
+            padding: 12px 25px;
+        }
+
+        .thanh-menu ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .thanh-menu a {
+            color: #dddddd;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .thanh-menu a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .noi-dung-chinh {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .cot-trai {
+            width: 40%;
+            background-color: #23272a;
+            color: #f1f1f1;
+            padding: 35px 30px;
+        }
+
+        .khung-anh {
+            margin-bottom: 25px;
+        }
+
+        .khung-anh img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #ffffff;
+            display: block;
+        }
+
+        .muc-trai {
+            margin-bottom: 25px;
+        }
+
+        .muc-trai h2 {
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ffffff;
+            border-bottom: 1px solid #444444;
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+        }
+
+        .muc-trai p {
+            font-size: 14px;
+            color: #d0d0d0;
+        }
+
+        .ds-lien-he {
+            list-style: none;
+            font-size: 14px;
+        }
+
+        .ds-lien-he li {
+            margin-bottom: 10px;
+            color: #e0e0e0;
+            word-break: break-word;
+        }
+
+        .nhan-thong-tin {
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: #999999;
+        }
+
+        .ds-gach-dau-dong {
+            padding-left: 18px;
+            font-size: 14px;
+            color: #d0d0d0;
+        }
+
+        .ds-gach-dau-dong li {
+            margin-bottom: 6px;
+        }
+
+        .ds-gach-dau-dong a {
+            color: #8ec5fc;
+            text-decoration: none;
+        }
+
+        .ds-gach-dau-dong a:hover {
+            text-decoration: underline;
+            color: #ffffff;
+        }
+
+        .cot-phai {
+            width: 60%;
+            padding: 35px 40px;
+        }
+
+        .dau-trang {
+            border-bottom: 2px solid #1c1e21;
+            padding-bottom: 18px;
+            margin-bottom: 25px;
+        }
+
+        .thong-tin-lop {
+            font-size: 12px;
+            font-weight: bold;
+            color: #0f4c81;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .dau-trang h1 {
+            font-size: 28px;
+            color: #1c1e21;
+            margin-bottom: 5px;
+        }
+
+        .chuc-danh {
+            font-size: 15px;
+            color: #555555;
+        }
+
+        .muc-phai {
+            margin-bottom: 30px;
+        }
+
+        .muc-phai h2 {
+            font-size: 16px;
+            text-transform: uppercase;
+            color: #1c1e21;
+            border-bottom: 1px solid #dcdcdc;
+            padding-bottom: 6px;
+            margin-bottom: 15px;
+        }
+
+        .bang {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13.5px;
+        }
+
+        th, td {
+            border-bottom: 1px solid #dcdcdc;
+            padding: 9px 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+            border-top: 1px solid #1c1e21;
+            border-bottom: 1px solid #1c1e21;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #333333;
+        }
+
+        tr:hover {
+            background-color: #f4f8fc;
+        }
+
+        th:first-child,
+        td:first-child {
+            text-align: center;
+            width: 45px;
+            font-weight: bold;
+            color: #0f4c81;
+        }
+
+        .bieu-mau-lien-he .o-nhap {
+            margin-bottom: 14px;
+        }
+
+        .bieu-mau-lien-he label {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .bieu-mau-lien-he input,
+        .bieu-mau-lien-he textarea {
+            width: 100%;
+            padding: 9px 10px;
+            border: 1px solid #bbbbbb;
+            border-radius: 3px;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        .bieu-mau-lien-he input:focus,
+        .bieu-mau-lien-he textarea:focus {
+            outline: none;
+            border-color: #0f4c81;
+        }
+
+        .nut-gui {
+            background-color: #23272a;
+            color: #ffffff;
+            border: none;
+            padding: 10px 22px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .nut-gui:hover {
+            background-color: #0f4c81;
+        }
+
+        .chan-trang {
+            border-top: 1px solid #dcdcdc;
+            background-color: #f9f9f9;
+            padding: 14px 30px;
+            font-size: 13px;
+            color: #555555;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="khung-cv">
+        <nav class="thanh-menu">
+            <ul>
+                <li><a href="profile.html">Home</a></li>
+                <li><a href="#GT">Giới thiệu</a></li>
+                <li><a href="#TTIN">Liên hệ</a></li>
+                <li><a href="#KN">Kỹ năng</a></li>
+                <li><a href="#ST">Sở thích</a></li>
+                <li><a href="#MXH">Liên kết</a></li>
+                <li><a href="#TKB">Thời khóa biểu</a></li>
+                <li><a href="#FORM">Liên hệ</a></li>
+            </ul>
+        </nav>
+
+        <main class="noi-dung-chinh">
+            <aside class="cot-trai">
+                <div class="khung-anh">
+                    <img src="hinh.png" alt="Ảnh đại diện Dương Vũ Kim Anh">
+                </div>
+
+                <section id="GT" class="muc-trai">
+                    <h2>Giới thiệu</h2>
+                    <article>
+                        <p>Xin chào! Tôi là <strong>Dương Vũ Kim Anh</strong>, hiện là sinh viên năm nhất ngành Công nghệ thông tin (Lớp: 52.01.CNTT.C) tại trường Đại học Sư Phạm TPHCM.</p>
+                    </article>
+                </section>
+
+                <section id="TTIN" class="muc-trai">
+                    <h2>Thông tin liên hệ</h2>
+                    <article>
+                        <ul class="ds-lien-he">
+                            <li>
+                                <span class="nhan-thong-tin">Địa chỉ</span>
+                                254 Nguyễn Duy Dương, P. Vườn Lài, TP.HCM
+                            </li>
+                            <li>
+                                <span class="nhan-thong-tin">Điện thoại</span>
+                                0971067738
+                            </li>
+                            <li>
+                                <span class="nhan-thong-tin">Email</span>
+                                star.duongvukimanh.0401@gmail.com
+                            </li>
+                        </ul>
+                    </article>
+                </section>
+
+                <section id="KN" class="muc-trai">
+                    <h2>Kỹ năng</h2>
+                    <article>
+                        <ul class="ds-gach-dau-dong">
+                            <li>Tin học văn phòng & Tin học cơ bản</li>
+                            <li>Lập trình cơ bản</li>
+                            <li>Làm việc nhóm và giao tiếp</li>
+                        </ul>
+                    </article>
+                </section>
+
+                <section id="ST" class="muc-trai">
+                    <h2>Sở thích</h2>
+                    <article>
+                        <ul class="ds-gach-dau-dong">
+                            <li>Chơi thể thao (Bơi lội, Cầu lông)</li>
+                            <li>Nghe nhạc và du lịch khám phá</li>
+                        </ul>
+                    </article>
+                </section>
+
+                <section id="MXH" class="muc-trai">
+                    <h2>Mạng xã hội &amp; Liên kết</h2>
+                    <article>
+                        <ul class="ds-gach-dau-dong">
+                            <li><a href="https://www.facebook.com/anh.duong.vu.kim.2024" target="_blank">Trang Facebook cá nhân</a></li>
+                            <li><a href="https://github.com/kimanh4108/" target="_blank">Tài khoản GitHub</a></li>
+                        </ul>
+                    </article>
+                </section>
+            </aside>
+
+            <div class="cot-phai">
+                <header class="dau-trang">
+                    <p class="thong-tin-lop">Lớp 52.01.CNTT.C &bull; HCMUE</p>
+                    <h1>DƯƠNG VŨ KIM ANH</h1>
+                    <p class="chuc-danh">Sinh viên Công nghệ thông tin — Trường Đại học Sư phạm TP.HCM</p>
+                </header>
+
+                <section id="TKB" class="muc-phai">
+                    <h2>Thời Khóa Biểu</h2>
+                    <article>
+                        <div class="bang">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Thứ</th>
+                                        <th>Thời gian</th>
+                                        <th>Môn học</th>
+                                        <th>Phòng</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>12:30 - 15:00</td>
+                                        <td>Thiết kế web (COMP1802)</td>
+                                        <td>I.201</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>15:10 - 17:40</td>
+                                        <td>Lập trình cơ bản (COMP1010)</td>
+                                        <td>I.203</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>06:30 - 09:00</td>
+                                        <td>Triết học Mác - Lênin (POLI2001)</td>
+                                        <td>A.103</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>15:10 - 17:40</td>
+                                        <td>Cơ sở toán trong CNTT (COMP1800)</td>
+                                        <td>A.414</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>15:10 - 17:40</td>
+                                        <td>Lập trình cơ bản (COMP1010)</td>
+                                        <td>I.203</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>12:30 - 15:00</td>
+                                        <td>Cơ sở toán trong CNTT (COMP1800)</td>
+                                        <td>B.116</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>15:10 - 17:40</td>
+                                        <td>Toán rời rạc và ứng dụng (COMP1801)</td>
+                                        <td>I.203</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>15:10 - 17:40</td>
+                                        <td>GDTC 1 - Thể dục Điền kinh (PHYL2401)</td>
+                                        <td>NTD.PHÚ THỌ</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+                </section>
+
+                <section id="FORM" class="muc-phai">
+                    <h2>Form liên hệ</h2>
+                    <article>
+                        <form action="#" method="post" class="bieu-mau-lien-he">
+                            <div class="o-nhap">
+                                <label for="fullname">Họ và tên:</label>
+                                <input type="text" id="fullname" name="fullname" required>
+                            </div>
+                            <div class="o-nhap">
+                                <label for="email">Email của bạn:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="o-nhap">
+                                <label for="subject">Tiêu đề:</label>
+                                <input type="text" id="subject" name="subject">
+                            </div>
+                            <div class="o-nhap">
+                                <label for="message">Nội dung:</label>
+                                <textarea id="message" name="message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="nut-gui">Gửi</button>
+                        </form>
+                    </article>
+                </section>
+            </div>
+        </main>
+
+        <footer class="chan-trang">
+            <p>Bản quyền thuộc về tác giả.</p>
+        </footer>
+    </div>
+</body>
+</html>
